@@ -1,0 +1,12 @@
+{
+    "name": "binaryceo/request",
+    "description": "Database manager ...",
+    "license": "MIT",
+    "authors": [{
+        "name": "Venus",
+        "email": "bussinse@example.com"
+    }],
+    "require": {
+        "php": ">=8.0.0"
+    }
+}
