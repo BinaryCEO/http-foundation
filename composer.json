@@ -1,12 +1,12 @@
 {
     "name": "binaryceo/request",
-    "description": "Database manager ...",
+    "description": "A package for handling requests.",
     "license": "MIT",
     "authors": [{
-        "name": "Venus",
-        "email": "bussinse@example.com"
+        "name": "Binary CEO",
+        "email": "binaryceo@outlook.com"
     }],
     "require": {
-        "php": ">=8.0.0"
+        "php": "8.*"
     }
 }
