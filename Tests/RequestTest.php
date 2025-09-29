@@ -9,7 +9,6 @@ class RequestTest extends TestCase
     protected array $backupServer;
     protected array $backupGet;
     protected array $backupPost;
-    protected array $backupRequest;
 
     protected function setUp(): void
     {
@@ -17,7 +16,6 @@ class RequestTest extends TestCase
         $this->backupServer = $_SERVER ?? [];
         $this->backupGet = $_GET ?? [];
         $this->backupPost = $_POST ?? [];
-        $this->backupRequest = $_REQUEST ?? [];
     }
 
     protected function tearDown(): void
@@ -26,14 +24,12 @@ class RequestTest extends TestCase
         $_SERVER = $this->backupServer;
         $_GET = $this->backupGet;
         $_POST = $this->backupPost;
-        $_REQUEST = $this->backupRequest;
     }
 
     public function testQueryAndRequestAndInput()
     {
         $_GET = ['q' => 'search'];
         $_POST = ['name' => 'Bob'];
-        $_REQUEST = array_merge($_GET, $_POST);
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_SERVER['REQUEST_URI'] = '/test?q=search';
 
@@ -47,7 +43,6 @@ class RequestTest extends TestCase
     {
         $_GET = [];
         $_POST = ['_method' => 'PUT'];
-        $_REQUEST = array_merge($_GET, $_POST);
         $_SERVER['REQUEST_METHOD'] = 'POST';
 
         $request = Request::fromGlobals();
